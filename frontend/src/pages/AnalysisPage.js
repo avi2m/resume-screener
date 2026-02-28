@@ -36,7 +36,6 @@ const AnalysisPage = ({ onBack, onResults }) => {
   }, []);
 
   const validateAndSetFile = (f) => {
-    const allowed = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/msword', 'text/plain'];
     const ext = f.name.split('.').pop().toLowerCase();
     const allowedExt = ['pdf', 'docx', 'doc', 'txt'];
     
