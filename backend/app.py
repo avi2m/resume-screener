@@ -21,13 +21,9 @@ def create_app():
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     
     # Enable CORS for React frontend
-    CORS(app, resources={
-        r"/api/*": {
-            "origins": [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://resume-screener-virid.vercel.app/"
-],
+  CORS(app, resources={
+    r"/api/*": {
+        "origins": "*",
             "methods": ["GET", "POST", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"]
         }
